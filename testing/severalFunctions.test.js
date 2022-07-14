@@ -88,4 +88,35 @@ describe("Given a lowerCamelCase Function", () => {
       expect(expectedResult).toBe(text);
     });
   });
+  describe("When it receives an empty string", () => {
+    test("Then it should return the text 'You must provide some text", () => {
+      const noTextProvided = "";
+      const expectedMessage = "You must provide some text";
+
+      const expectedTextResult = toLowerCamelCase(noTextProvided);
+
+      expect(expectedTextResult).toBe(expectedMessage);
+    });
+  });
+  describe("When it receives the text 'now-yes'", () => {
+    test("Then it should return the text 'The text contains dashes", () => {
+      const textWithDashes = "now_yes";
+      const expectedMessage = "The text contains underscores";
+
+      const expectedTextResult = toLowerCamelCase(textWithDashes);
+
+      expect(expectedTextResult).toBe(expectedMessage);
+    });
+  });
+});
+describe("Given a kebabCase Function", () => {
+  describe("When it receives an kebabCase text", () => {
+    test("Then it should return the text  in lowerCamel", () => {
+      const text = "alohomora_Loho_Mora";
+
+      const expectedResult = toKebabCase("alohomoraLohoMora");
+
+      expect(expectedResult).toBe(text);
+    });
+  });
 });
