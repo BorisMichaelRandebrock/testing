@@ -5,10 +5,6 @@ export const sum = (number1, number2) => {
     return "You must provide two numbers";
   }
 
-  // if (number1 === typeof "" || number2 === isNaN()) {
-  //   return "You must provide two numbers";
-  // }
-
   return number1 + number2;
 };
 
